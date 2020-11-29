@@ -51,7 +51,7 @@ location_descriptions = {
 class Player(object):
 
     def __init__(self):
-        self.name = input("Enter you name: ")
+        self.name = input("Name, plz: ")
         self.location = "House"
         self.inventory = ["dress", "phone" , "lipstick", "cat1", "cat2", "cat3", "water bootle", "thermos"]
         self.health = 100
@@ -59,22 +59,22 @@ class Player(object):
 
     def menu(self):
         options = [
-            "Go somewhere new",
-            "Show your inventory"
+            "Go somewhere",
+            "Inventory"
         ]
         action = pick_one(options)
-        if action == "Go somewhere new":
+        if action == "Go somewhere":
             self.travel()
-        elif action == "Show your inventory":
+        elif action == "Inventory":
             self.list_inventory()
         else: 
-            raise StandardError ("There's no code for this action (%s) in Player.menu()!" % str(action))
+            raise StandardError ("Action (%s) is not in Player.menu()!" % str(action))
 
     def list_inventory(self):
         print ("Your inventory:")
         for item in self.inventory:
             print (" -"),item
-            print ("You have %s gold coins") % str (self.gold)
+            print ("%s gold coins! :D") % str (self.gold)
 
 
 # main game loop
