@@ -71,6 +71,7 @@ def play_again():
     print("\n Wanna play again? (y or n)")
 
     answer = input(">").lower()
+    # 
 
     if "y" in answer:
         start()
