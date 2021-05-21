@@ -50,22 +50,40 @@ INSERT INTO Departamentos  (Codigo, Nome, Localizacao, CodigoFuncionarioGerente)
     (096, 'Sociologia', 'Brasília', 8),
     (070, 'Human Resources', 'Edmonton', 13);
 
--- QUESTÃO A) Listar nome e sobrenome ordenado por sobrenome
-SELECT PrimeiroNome, UltimoNome
-FROM Funcionarios
-ORDER BY UltimoNome
+-- A
+SELECT PrimeiroNome, UltimoNome FROM Funcionarios
+	ORDER BY UltimoNome
 
--- QUESTÃO B) Listar todos os campos de funcionarios ordenados por cidade
-SELECT *
-FROM Funcionarios
-ORDER BY Cidade
+-- B
+SELECT * FROM Funcionarios
+	ORDER BY Cidade
 
--- QUESTÃO C) Liste os funcionários que têm salário superior a R$ 1.000,00 ordenados pelo nome completo
-SELECT *
-FROM Funcionarios
-WHERE Salario > 1000
-ORDER BY PrimeiroNome,
-SegundoNome, UltimoNome
+-- C
+SELECT * FROM Funcionarios
+	WHERE Salario > 1000
+	ORDER BY PrimeiroNome, SegundoNome, UltimoNome
+
+-- D
+SELECT DataNasci, PrimeiroNome FROM Funcionarios
+	ORDER BY DataNasci DESC,
+	PrimeiroNome
+
+-- E
+SELECT SUM(Salario) FROM Funcionarios
+
+-- F
+SELECT Funcionarios.PrimeiroNome, Departamentos.Nome, Funcionarios.Funcao 
+	FROM Funcionarios JOIN Departamentos ON Funcionarios.CodigoDepartamento = Departamentos.Codigo
+	ORDER BY Funcionarios.PrimeiroNome
+	
+-- G
+SELECT COUNT(*)
+	FROM Funcionarios
+
+-- H
+SELECT Funcionarios.PrimeiroNome, Departamentos.Nome 
+	FROM Departamentos JOIN Funcionarios ON Departamentos.Codigo = Funcionarios.CodigoDepartamento
+	ORDER BY Departamentos.Nome, Funcionarios.PrimeiroNome
 
 
 
