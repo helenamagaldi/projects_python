@@ -84,13 +84,16 @@ def main():
     while True:
         assert player.location in locations
         "This isn't a valid location (%s)! I'm not sure how you got here..." % str (locations)
-        print ""
-        print location_descriptions
-         [player.location])
+        print 
+        ""
+        print 
+        location_descriptions
+        [player.location])
             if player.location == "House":
                 pass
             elif player.location == "Pat's":
-                print "A wild cat appears"
+                print 
+                "A wild cat appears"
                 pet_cat = yes_or_no("Do you want to pet the cat?")
 
 # CORRECT This
@@ -104,23 +107,27 @@ def main():
 
             if pet_cat:
                 player.gold = player.gold + 1
-                print "the cat has given you a gold coin! You now have %x coins" % str(player.gold)
+                
+                print 
+                "the cat has given you a gold coin! You now have %x coins" % str(player.gold)
             else:
-                print "You prefer to be a sad person and to not fluff the fluffy"
-        elif player.location == "Karla's":
-            if player.gold >= 10:
-                buy_treats = yes_or_no("Do you wanna buy some treats?")
-                    if buy_treats:
-                        player.gold = player.gold - 10
-                        player.inventory.append("yummy treats!")
-                        print "you bought treats"
-                    else: 
-                        print "Fine, then"
+                print 
+                "You prefer to be a sad person and to not fluff the fluffy"
+        
+            if player.location == "Karla's":
+                if player.gold >= 10:
+                    buy_treats = yes_or_no("Do you wanna buy some treats?")
+                        if buy_treats:
+                            player.gold = player.gold - 10
+                            player.inventory.append("yummy treats!")
+                            print "you bought treats"
+                        else: 
+                            print "Fine, then"
+                else:
+                    print "You need more din-din"
             else:
-                print "You need more din-din"
-        else:
-            raise StardatError ("There's no code for this location (%s) in main()!" % str(location)
-        player.menu()
+                raise StardatError ("There's no code for this location (%s) in main()!" % str(location)
+            player.menu()
 
 
 # other functions
