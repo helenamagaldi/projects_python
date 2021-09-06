@@ -27,5 +27,4 @@ else:
   pontuacao.pop(index_value2)
 
 
-print(pontuacao)
-print(escolhidos)
+# lost the entire code lol, REDO
