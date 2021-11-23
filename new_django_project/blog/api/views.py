@@ -4,7 +4,7 @@ from api.models import Post
 from api.permissions import IsOwnerOrReadOnly
 from django.contrib.auth.models import User
 
-from blog.api.serializers import PostSerializer
+from api.serializers import PostSerializer
 
 
 class UserList(generics.ListAPIView):
